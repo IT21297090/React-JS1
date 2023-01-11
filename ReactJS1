@@ -1,0 +1,113 @@
+mport React,{Component} from 'react';
+
+ import 'bootstrap/dist/css/bootstrap.min.css';
+
+ import { BrowserRouter as Router,Switch,Route,Link} from 'react-router-dom';
+
+ //import Create from './components/create.component.js';
+
+ import Edit from './components/edit.component.js';
+
+ import Index from './components/index.component.js';
+
+ import register from './components/register.js';
+
+ import { ImHome } from "react-icons/im";
+
+ import Home from './components/Home.js';
+
+ import Footer from './components/Footer.js';
+
+ 
+
+ 
+
+ 
+
+
+
+
+ class App extends Component{
+
+  render(){
+
+     return (
+
+      <Router>
+
+        <div className=".container-fluid">
+
+          <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark bg-gradient">
+
+            <Link to  ='/home' className = "px-3 py-2"> <ImHome/></Link>
+
+            <div className=".collapse.navbar-collapse" id = "navbarSupportedContent">
+
+             <ul className="navbar-nav mr-auto ">
+
+              <li className="nav-item">
+
+                 <Link to='/home' className ="nav-link">  Home</Link>
+
+              </li>
+
+              <li className="nav-item">
+
+                 <Link to='/register' className ="nav-link">Register</Link>
+
+              </li>
+
+              <li className="nav-item">
+
+                 <Link to='/index' className ="nav-link">Profile</Link>
+
+              </li>
+
+            </ul>
+
+           
+
+        </div >  
+
+      </nav> <br/>
+
+   
+
+ 
+
+       
+
+        <Switch>
+
+          <Route exact path = '/register' component = {register} />
+
+          <Route exact path = '/home'   component = {Home} />
+
+          <Route exact path = '/edit'   component = {Edit}   />
+
+          <Route exact path = '/index'  component = {Index}  />
+
+         
+
+        </Switch>
+
+        </div>
+
+       
+
+
+
+      <Footer/>
+
+      </Router>
+
+     );
+
+  }
+
+
+
+
+ }
+
+ export default App;
